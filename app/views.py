@@ -60,7 +60,6 @@ def get_image(filename):
 def files():
     if not session.get('logged_in'):
         abort(401)
-        pics = get_uploaded_images()
 
         """ Render a list of files uploaded."""
         return render_template('files.html')
