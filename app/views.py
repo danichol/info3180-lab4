@@ -44,7 +44,7 @@ def upload():
         flash('File Saved', 'success')
         return redirect(url_for('home'))
 
-        else:
+    else:
           flash('File Not Saved', 'error')  
 
     return render_template('upload.html',form=form)
@@ -59,7 +59,7 @@ def files():
     if not session.get('logged_in'):
         abort(401)
         pics = get_uploaded_images()
-        
+
         """ Render a list of files uploaded."""
         return render_template('files.html')
 
