@@ -57,7 +57,7 @@ def upload():
         for dirs,subdir, filrs in os.walk(os.path.join(app.config["UPLOAD_FOLDER"])):
             for file in files:
                 imageList.append(file)
-        return photoList
+        return imageList
                                     
 @app.route('/uploads/<filename>')
 def get_image(filename):
