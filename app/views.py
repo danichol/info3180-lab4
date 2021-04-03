@@ -38,19 +38,16 @@ def upload():
 
     # Validate file upload on submit
     if request.method == 'POST':
-        if validate_on_submit():
-            # Get file data and save to your uploads folder
-            photo = photoform.photo.data
-            filename = secure_filename(photo.filename)
-            photo.save(os.path.join(app.config["UPLOAD_FOLDER"],filename))
+        # Get file data and save to your uploads folder
+        photo = photoform.photo.data
+        filename = secure_filename(photo.filename)
+        photo.save(os.path.join(app.config["UPLOAD_FOLDER"],filename))
 
-            flash('File Saved', 'success')
+        flash('File Saved', 'success')
 
-        else:
+    else:
           flash('File Not Saved', 'error')  
 
-        return redirect(url_for('home'))
-        
     return render_template('upload.html',form=photoform)
 
     def get_uploaded_images():
