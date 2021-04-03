@@ -1,0 +1,14 @@
+% extends "base.html" %
+{% block main %} 
+
+<h1 class="page-header"> Files Uploaded </h1>
+{% include 'flash_messages.html'%} 
+
+<p> This page displays the files that have been uploaded</p>
+
+
+{% for photo in photos}
+    <img class ="photo" src="{{url_for('files')}}" alt="Photos"></li>
+{% endfor %}
+
+{% endblock %}
