@@ -50,6 +50,14 @@ def upload():
           flash('File Not Saved', 'error')  
 
     return render_template('upload.html',form=photoform)
+
+    def get_uploaded_images():
+        imageList=[]
+
+        for dirs,subdir, filrs in os.walk(os.path.join(app.config["UPLOAD_FOLDER"])):
+            for file in files:
+                imageList.append(file)
+        return photoList
                                     
 @app.route('/uploads/<filename>')
 def get_image(filename):
