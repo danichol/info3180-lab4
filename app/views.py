@@ -34,7 +34,7 @@ def upload():
         abort(401)
 
     # Instantiate your form class
-    photoform=UploadForm()
+    photoform=PhotoForm()
 
     # Validate file upload on submit
     if request.method == 'POST':
