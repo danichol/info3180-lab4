@@ -49,7 +49,7 @@ def upload():
     else:
           flash('File Not Saved', 'error')  
 
-    return render_template('upload.html',form=form)
+    return render_template('upload.html',form=photoform)
                                     
 @app.route('/uploads/<filename>')
 def get_image(filename):
